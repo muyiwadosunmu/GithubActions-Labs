@@ -11,11 +11,11 @@ jobs:
   echo-goodbye:
     runs-on: ubuntu-latest
     steps:
-      - name: Failed step
+      - name: Successful step
         # in bash a non-zero code means execution of script failed
         # Verical lines is necessary when we are definning multi-line script
         run: |
-          echo ""I will fail
-          exit 1
+          echo "I will succeed"
+          exit 0
       - name: Say Goodbye
         run: echo "Goodbye!!!"
