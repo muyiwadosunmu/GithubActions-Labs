@@ -1,5 +1,9 @@
 name: 07 - Using Expressions
+#  Expression below allows us to set defaults values
+run-name: 07 - Using Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF'}}
 
+env:
+  MY_VAR_WITH_DEFAULT: ${{vars.MY_VAR || 'default_value'}}
 on:
   push:
     # Remember we cannot put an input command on push events
