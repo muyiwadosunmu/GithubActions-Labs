@@ -24,3 +24,8 @@ jobs:
           echo  "Job env var: ${{env.JOB_ENV}}"
           echo  "Workflow env var: ${{env.WORKFLOW_VAR}}"
           echo "Overwritten ${{env.OVERWRITTEN}}"
+      - name: Overwritten job variable
+        env:
+          OVERWRITTEN: "I have been overwritten at step level"
+        run: |
+          echo "Step env var: ${{ env.OVERWRITTEN }}"
