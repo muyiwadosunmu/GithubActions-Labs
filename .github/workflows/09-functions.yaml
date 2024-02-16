@@ -18,10 +18,15 @@ jobs:
       - name: Bug step
         if: ${{!cancelled() && contains(github.event.pull_request.title, 'fix') }}
         run: echo "I am a bug fix"
-      - name: Sleep for 20 seconds
-        run: sleep 20
-      - name: Failing steps
-        run: exit 1
+      #   - name: Sleep for 20 seconds
+      #     run: sleep 20
+      #   - name: Failing steps
+      #     run: exit 1
+      - name: Test
+        #    The below syntax gives error
+        # if: !cancelled()
+        if: ${{!cancelled()}}
+        run: echo "Test"
       - name: I will be Skipped
         if: ${{success()}}
         run: echo "I will print if previous steps succeed"
